@@ -28,7 +28,7 @@ super spa searchとはスーパー銭湯の検索レビューサイトです。
 
 ## 設計書
 
-## チャレンジ要素一覧
+## 機能一覧
 https://docs.google.com/spreadsheets/d/1KbKKYVggwtsb5IEh-G6k9OWQFq7cQHs9bIodvj83Pek/edit#gid=0
 
 ## 開発環境
