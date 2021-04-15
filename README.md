@@ -26,6 +26,7 @@ super spa searchとはスーパー銭湯の検索レビューサイトです。
 ## 設計書
 * uiflows　https://drive.google.com/file/d/1mdNWHCL7QIwAklINitl_u7OPZZELfHT1/view?usp=sharing
 * テーブル定義書　https://docs.google.com/spreadsheets/d/1_BdLdgWOdORKQWlIzDCm5RTAzYuanOox/edit#gid=45950763
+* 詳細設計書　https://docs.google.com/spreadsheets/d/1Fq2XM17UvZmAw7mvXpcjZB9d3YRIKcQs/edit#gid=2077000419
 
 ## 機能一覧
 https://docs.google.com/spreadsheets/d/1KbKKYVggwtsb5IEh-G6k9OWQFq7cQHs9bIodvj83Pek/edit#gid=0
