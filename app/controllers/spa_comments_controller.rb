@@ -2,16 +2,16 @@ class SpaCommentsController < ApplicationController
 
   def create
     @spa = Spa.find(params[:spa_id])
-    comment = @spa.spa_comment.new(spa_comment_params)
+    comment = @spa.spa_comments.new(spa_comment_params)
     comment.user_id = current_user.id
     comment.save
-    render :index
+    redirect_to request.referer
   end
 
   def destroy
     SpaComment.find_by(id: params[:id], spa_id: params[:book_id]).destroy
     @spa = Spa.find(params[:spa_id])
-    render :index
+    redirect_to request.referer
   end
 
   private

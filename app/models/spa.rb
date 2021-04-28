@@ -2,8 +2,9 @@ class Spa < ApplicationRecord
   belongs_to :user
   has_many :spa_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites, source: :user
 
-  def favorited_by?(user)
+  def favoreted_by?(user)
     favorites.where(user_id: user.id).exists?
   end
 

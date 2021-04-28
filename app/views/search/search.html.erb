@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% if @model == 'user' %>
+        <h3>User search for "<%= @content %>"</h3>
+      <% else @model == 'spa' %>
+        <h3>Spa search for "<%= @content %>"</h3>
+      <% end %>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <% if @model == 'user' %>
+              <th>ユーザー名</th>
+            <% else @model == 'spa' %>
+              <th>銭湯名</th>
+              <th>住所</th>
+              <th>ポイント</th>
+              <th>浴槽数</th>
+              <th>駐車場数</th>
+              <th>営業時間</th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @model == 'user' %>
+            <% @datas.each do |user| %>
+              <tr>
+                <td><%= link_to user.name %></td>
+              </tr>
+            <% end %>
+          <% else @model == 'spa' %>
+            <% @datas.each do |spa| %>
+              <tr>
+                <td><%= link_to spa.user.name %></td>
+                <td><%= link_to spa.name, spa_path(spa.id) %></td>
+                <td><%= spa.address %></td>
+                <td><%= spa.introduction %></td>
+                <td><%= spa.bath %></td>
+                <td><%= spa.parking %></td>
+                <td><%= spa.opening %></td>
+                <td id="favorite-btn_<#%=spa.id %>">
+                  <%= render 'favorites/favorite', { spa: spa } %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

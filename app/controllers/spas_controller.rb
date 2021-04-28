@@ -8,7 +8,7 @@ class SpasController < ApplicationController
     @spa = Spa.new(spa_params)
     @spa.user_id = current_user.id
     if @spa.save
-      redirect_to spa_path(@spa), notice:'You have created spa successfully'
+      redirect_to spas_path(@spa)
     else
       @spas = Spa.all
       @user = current_user
@@ -17,14 +17,14 @@ class SpasController < ApplicationController
   end
 
   def index
-    @spas = Spa.all
+    @spas = Spa.includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
     @spa = Spa.new
     @user = current_user
   end
 
   def show
     @spa = Spa.find(params[:id])
-    @spa_new = spa.new
+    @spa_new = Spa.new
     @user = @spa.user
     @spa_comment = SpaComment.new
     @spa_comments = @spa.spa_comments
@@ -53,9 +53,9 @@ class SpasController < ApplicationController
 
   private
 
-  # def spa_params
-  #   params.require(:spa).permit()
-  # end
+  def spa_params
+    params.require(:spa).permit(:name, :address, :introduction, :bath, :parking, :opening)
+  end
 
   # def ensure_correct_user
   #   @spa = Spa.find(params[:id])

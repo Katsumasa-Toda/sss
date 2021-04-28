@@ -9,7 +9,7 @@
         <td>
           <% if spa_comment.user == current_user %>
             <div class="comment-delete">
-              <%= link_to "削除", spa_spa_comment_path(spa_comment.spa, spa_comment), method: :delete, "data-confirm" => "本当によろしいですか？", class: 'btn btn-danger' %>
+              <%= link_to "削除", spa_spa_comments_path(spa_comment.spa, spa_comment), method: :delete, "data-confirm" => "本当によろしいですか？", class: 'btn btn-danger' %>
             </div>
           <% end %>
         </td>

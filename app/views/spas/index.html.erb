@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-    <%#= render 'spas/profile', {user: @user, spa: @spa } %>
+    <%= render 'spas/profile', {user: @user, spa: @spa } %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h3>銭湯一覧</h3>
@@ -20,16 +20,17 @@
         <tbody>
           <% @spas.each do |spa| %>
             <tr>
-              <td><%= link_to spa.user %></td>
+              <td><%= link_to spa.user.name %></td>
               <td><%= link_to spa.name, spa_path(spa.id) %></td>
+              <td><%= spa.address %></td>
               <td><%= spa.introduction %></td>
               <td><%= spa.bath %></td>
               <td><%= spa.parking %></td>
               <td><%= spa.opening %></td>
-              <!--<td id="favorite-btn_<#%=spa.id %>">-->
-              <!--  <#%= render 'favorites/favorite-btn', { spa: spa } %>-->
-              <!--</td>-->
-              <!--<td><#%= "コメント数:#{spa.spa_comments.count}" %></td>-->
+              <td id="favorite-btn_<#%=spa.id %>">
+                <%= render 'favorites/favorite', { spa: spa } %>
+              </td>
+              <td><%= "コメント数:#{spa.spa_comments.count}" %></td>
             </tr>
           <% end %>
         </tbody>

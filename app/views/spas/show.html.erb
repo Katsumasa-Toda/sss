@@ -1,19 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <%#= render 'users/profile', {user: @user, spa: @spa } %>
+      <%= render 'spas/profile', {user: @user, spa: @spa } %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h3>銭湯詳細</h3>
       <table class="table table-hover table-inverse">
         <tbody>
           <tr>
-            <td><%= link_to spa.user %></td>
-            <td><%= link_to spa.name, spa_path(spa.id) %></td>
-            <td><%= spa.introduction %></td>
-            <td><%= spa.bath %></td>
-            <td><%= spa.parking %></td>
-            <td><%= spa.opening %></td>
+            <td><%= link_to @spa.user.name %></td>
+            <td><%= link_to @spa.name, spa_path(@spa.id) %></td>
+            <td><%= @spa.address %></td>
+            <td><%= @spa.introduction %></td>
+            <td><%= @spa.bath %></td>
+            <td><%= @spa.parking %></td>
+            <td><%= @spa.opening %></td>
             <!--<td id="favorite-btn_<#%=spa.id %>">-->
             <!--  <#%= render'favorites/favorite-btn',{ spa: spa } %>-->
             <!--</td>-->
@@ -24,7 +25,7 @@
               <td>
                 <%= link_to "削除", spa_path(@spa.id), method: :delete, "data-confirm" => "本当によろしいですか？", class: 'btn btn-danger' %>
               </td>
-              <!--<td><#%= "コメント数:#{spa.spa_comments.count}" %></td>-->
+              <td><%= "コメント数:#{@spa.spa_comments.count}" %></td>
             <% end %>
           </tr>
         </tbody>

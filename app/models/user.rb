@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :spas, dependent: :destroy
   has_many :spa_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorited_spas, through: :favorites, source: :spa
 
   validates :name, uniqueness: true
   validates :name, length: { in:2..20 }
