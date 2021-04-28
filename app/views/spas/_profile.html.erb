@@ -1,0 +1,14 @@
+<table class="table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>ようこそ</th><th><%= user.name %>さん</th>
+    </tr>
+  </tbody>
+</table>
+<% if current_user == user %>
+  <%= link_to edit_user_path(user), class: "btn btn-outline-dark btn-block" do %>
+    <span class="fas fa-user-cog"></span>
+  <% end %>
+<% end %>
+<%= link_to "新規銭湯登録", new_spa_path %>

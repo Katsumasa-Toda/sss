@@ -10,18 +10,37 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarLinks">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+                <li class="border border-dark rounded" style="padding:10px; margin:10px;">
+                  <%= link_to "トップ", spas_path, class:"btn btn-outline" %>
+                </li>
+                <li class="border border-dark rounded" style="padding:10px; margin:10px;">
+                  <%= link_to "ユーザー", users_path, class:"btn btn-outline" %>
+                </li>
+                <li class="border border-dark rounded" style="padding:10px; margin:10px;">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-outline" %>
+                </li>
+              <% else %>
+                <li class="border border-dark rounded" style="padding:10px; margin:10px;">
+                  <%= link_to "トップ", root_path, class:"btn btn-outline" %>
+                </li>
+                <li class="border border-dark rounded" style="padding:10px; margin:10px;">
+                  <%= link_to "新規登録", new_user_registration_path, class:"btn btn-outline" %>
+                </li>
+                <li class="border border-dark rounded" style="padding:10px; margin:10px;">
+                  <%= link_to "ログイン", new_user_session_path, class:"btn btn-outline" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
   </body>
+  <%= yield %>
 </html>

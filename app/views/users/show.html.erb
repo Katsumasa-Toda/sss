@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%#= render 'spas/profile', {user: @user, spa: @spa } %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h3>ユーザー詳細</h3>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>銭湯名</th>
+            <th>住所</th>
+            <th>ポイント</th>
+            <th>浴槽数</th>
+            <th>駐車場数</th>
+            <th>営業時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @spas.each do |spa| %>
+            <tr>
+              <td><%= link_to spa.user %></td>
+              <td><%= link_to spa.name, spa_path(spa.id) %></td>
+              <td><%= spa.introduction %></td>
+              <td><%= spa.bath %></td>
+              <td><%= spa.parking %></td>
+              <td><%= spa.opening %></td>
+              <!--<td id="favorite-btn_<#%=spa.id %>">-->
+              <!--  <#%= render 'favorites/favorite-btn', { spa: spa } %>-->
+              <!--</td>-->
+              <% if user_signed_in? && current_user.id == @spa.user.id %>
+              <td>
+                <%= link_to "編集", edit_spa_path(@spa.id), class: 'btn btn-success' %>
+              </td>
+              <td>
+                <%= link_to "削除", spa_path(@spa.id), method: :delete, "data-confirm" => "本当によろしいですか？", class: 'btn btn-success' %>
+              </td>
+              <!--<td><#%= "コメント数:#{spa.spa_comments.count}" %></td>-->
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

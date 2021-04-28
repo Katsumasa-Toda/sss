@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%#= render 'spas/profile', {user: @user, spa: @spa } %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h3>ユーザー一覧</h3>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>ユーザー名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to user.name %></td>
+              <td><%= link_to "ユーザー詳細", user_path(user.id) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
