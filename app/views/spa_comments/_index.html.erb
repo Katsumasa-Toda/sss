@@ -6,6 +6,7 @@
           <%= link_to spa_comment.user.name, user_path(spa_comment.user.id) %>
         </td>
         <td><%= spa_comment.comment %></td>
+        <td>感情分析スコア[<%= spa_comment.score%>]</td>
         <td>
           <% if spa_comment.user == current_user %>
             <div class="comment-delete">

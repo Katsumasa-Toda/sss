@@ -4,6 +4,7 @@ class SpaCommentsController < ApplicationController
     @spa = Spa.find(params[:spa_id])
     comment = @spa.spa_comments.new(spa_comment_params)
     comment.user_id = current_user.id
+    comment.score = Language.get_data(spa_comment_params[:comment])
     comment.save
     redirect_to request.referer
   end
