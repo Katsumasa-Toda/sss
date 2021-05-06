@@ -48,7 +48,7 @@ class SpasController < ApplicationController
   def destroy
     @spa = Spa.find(params[:id])
     @spa.destroy
-    redirect_to spa_path
+    redirect_to spas_path
   end
 
   private

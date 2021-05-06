@@ -10,7 +10,7 @@ class SpaCommentsController < ApplicationController
   end
 
   def destroy
-    SpaComment.find_by(id: params[:id], spa_id: params[:book_id]).destroy
+    SpaComment.find_by(id: params[:id], spa_id: params[:spa_id]).destroy
     @spa = Spa.find(params[:spa_id])
     redirect_to request.referer
   end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :spas do
-    resource :spa_comments, only: [:create, :destroy]
+    resources :spa_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
   get '/search' => 'search#search'
