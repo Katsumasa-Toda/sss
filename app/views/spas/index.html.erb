@@ -12,9 +12,9 @@
             <th>銭湯名</th>
             <th>住所</th>
             <th>ポイント</th>
-            <th>浴槽数</th>
-            <th>駐車場数</th>
-            <th>営業時間</th>
+            <th class="text-nowrap">浴槽数</th>
+            <th class="text-nowrap">駐車場数</th>
+            <th class="text-nowrap">営業時間</th>
           </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
               <td id="favorite-btn_<#%=spa.id %>">
                 <%= render 'favorites/favorite', { spa: spa } %>
               </td>
-              <td><%= "コメント数:#{spa.spa_comments.count}" %></td>
+              <td class="text-nowrap"><%= "コメント数:#{spa.spa_comments.count}" %></td>
             </tr>
           <% end %>
         </tbody>
