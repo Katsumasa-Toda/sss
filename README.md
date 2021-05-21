@@ -32,7 +32,7 @@ super spa searchとはスーパー銭湯の検索レビューサイトです。
 https://docs.google.com/spreadsheets/d/1KbKKYVggwtsb5IEh-G6k9OWQFq7cQHs9bIodvj83Pek/edit#gid=0
 
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Amazon Linux
 - 言語：HTML,CSS,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - IDE：Cloud9
