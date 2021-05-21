@@ -33,7 +33,6 @@ https://docs.google.com/spreadsheets/d/1KbKKYVggwtsb5IEh-G6k9OWQFq7cQHs9bIodvj83
 
 ## 開発環境
 - OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- 言語：HTML,CSS,Ruby,SQL
 - フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
 - IDE：Cloud9
